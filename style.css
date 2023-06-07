@@ -1,0 +1,40 @@
+h1 {
+  margin: 0px;
+}
+
+body {
+  margin: 0px;
+  background-image: radial-gradient(circle at 50% 50.66%, #9539ff 0, #6a30e6 25%, #3825ca 50%, #001bad 75%, #001392 100%);
+
+}
+
+.cabecalho {
+  margin: 0 calc(50% - 100px) 20px;
+}
+
+.dado {
+  float: left;
+  margin-left: 10px;
+  width: 100px;
+  height: 90px;
+  border: 2px solid white;
+  text-align: center;
+}
+
+.jogoDaVelha {
+  margin-left: 150px;
+  width: 100px;
+  height: 90px;
+  border: 2px solid white;
+  text-align: center;
+
+}
+
+#imagemDado {
+  width: 100px;
+  height: 100px;
+}
+
+.jogoDoDado {
+  margin-left: 10px;
+}
