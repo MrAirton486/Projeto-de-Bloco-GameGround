@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Central da jogatina</title>
+  <title>Game Ground</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
   <script src="script.js" defer></script>
 </head>
@@ -12,19 +12,26 @@
 <body>
 
   <div class="cabecalho">
-    <img class="logo" src="img/onlygames5.png" alt="Logo do site OnlyGames" title="OnlyGames">
+    <img class="logo" src="img/gameground.png" alt="Logo do site Games Ground" title="Games Ground">
 
   </div>
   <section class="jogoDoDado">
-    <h3>Jogo de Dados</h3>
-    <p>
-      Adivinhe um número:
-      <input type="text" id="palpite" />
-      <input type="button" value="Jogar" onclick="jogar()" />
-    </p>
-    <p>
-      <img src="img/dice_1.gif" id="imagemDado">
-    </p>
+
+    <div class="container-center">
+      <div class="box">
+        <h3>Jogo de Dados</h3>
+      </div>
+      <div class="box">
+        <p>
+          Adivinhe um número:
+          <input type="text" id="palpite" size="2" />
+          <input type="button" value="Jogar" onclick="jogar()" />
+        </p>
+      </div>
+      <div class="box">
+        <img src="img/dice_1.png" id="dado">
+      </div>
+    </div>
   </section>
 </body>
 

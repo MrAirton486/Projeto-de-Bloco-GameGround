@@ -1,40 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 h1 {
   margin: 0px;
 }
 
 body {
-  margin: 0px;
-  background-image: radial-gradient(circle at 50% 50.66%, #9539ff 0, #6a30e6 25%, #3825ca 50%, #001bad 75%, #001392 100%);
+  min-height: 100vh;
+  background: #0c192c;
+}
 
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bolhas {
+  position: absolute;
+  display: flex;
+
+}
+
+.bolhas span {
+  width: 30px;
+  height: 30px;
+  background: #ffffff;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #ffffff44,
+    0 0 50px #ffffff,
+    0 0 100px;
+  animation: animar calc(130s / var(--i)) linear infinite;
+
+
+}
+
+.bolhas span:nth-of-type(even) {
+  background: #2dc3ff;
+  box-shadow: 0 0 0 10px #2dc3ff44,
+    0 0 50px #2dc3ff,
+    0 0 100px #2dc3ff;
+
+}
+
+@keyframes animar {
+  0% {
+    transform: translateY(-10vh) scale(0.5);
+  }
+
+  100% {
+    transform: translateY(100vh) scale(0);
+  }
 }
 
 .cabecalho {
   margin: 0 calc(50% - 100px) 20px;
-}
 
-.dado {
-  float: left;
-  margin-left: 10px;
-  width: 100px;
-  height: 90px;
-  border: 2px solid white;
-  text-align: center;
-}
-
-.jogoDaVelha {
-  margin-left: 150px;
-  width: 100px;
-  height: 90px;
-  border: 2px solid white;
-  text-align: center;
 
 }
 
-#imagemDado {
+#dado {
   width: 100px;
   height: 100px;
 }
 
 .jogoDoDado {
+  color: rgb(255, 255, 255);
+
   margin-left: 10px;
+
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.design {
+  width: 100px;
+  height: 90px;
+  border: 2px solid white;
+  text-align: center;
+  position: relative;
+  z-index: 9999;
+  border-radius: 20%;
+}
+
+.container-center {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.box {
+  display: flex;
+  /* align-items: center;*/
+  justify-content: center;
+  margin-top: 30px;
+}
+
+#dadoBotao:hover,
+#dadoBotao:focus {
+  transform: translateX(10px) scale(1.2);
+
 }

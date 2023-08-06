@@ -1,30 +1,67 @@
-function jogar() {
-  const palpite = document.getElementById("palpite");
-  let numero = Math.floor(Math.random() * 6) + 1
+function animarDado(numero) {
   const dado = document.getElementById("dado");
+  let numeroAtual = 1;
+  const totalQuadros = 20;
+  const duracaoAnimacao = 10000;
+  const tempoPorQuadro = duracaoAnimacao / totalQuadros;
 
-  dado.src = "img/dice_" + numero + ".gif";
+  const animacao = setInterval(() => {
+    dado.src = `img/dice_${numeroAtual}.png`;
 
+    if (numeroAtual > 6) {
+      numeroAtual = 1;
+    }
 
+    if (numeroAtual === numero) {
+      clearInterval(animacao);
 
-  if (numero == palpite.value) {
-    alert("Acertou!");
-  } else {
-    alert("Errou!");
-  }
+      setTimeout(() => {
+        if (numero == palpite.value) {
+          alert("Acertou!");
 
+        } else {
+          alert("Errou!");
+        }
+
+      }, 1000);
+    }
+
+    numeroAtual = Math.floor(Math.random() * 6) + 1;
+
+  }, tempoPorQuadro);
 }
 
+
+function jogar() {
+  const palpite = document.getElementById("palpite");
+  let numero = Math.floor(Math.random() * 6) + 1;
+  const dado = document.getElementById("dado");
+
+  animarDado(numero);
+
+  //dado.src = "img/dice_" + numero + ".gif";
+  /*
+    if (numero == palpite.value) {
+      alert("Acertou!");
+    } else {
+      alert("Errou!");
+    }*/
+}
+
+
+
+
+/*
 let vez = 1;
 let vencedor = "";
 
-function jogar(tituloCasa) {
+function jogarJogodaVelha(tituloCasa) {
   let casa = document.getElementById(tituloCasa);
   var bg = casa.style.getPropertyValue("background-image");
-  if(bg == "none" || bg == "") {          
+  if (bg == "none" || bg == "") {
     var fig = `url(JogodaVelha0${vez}.jpg)`;
     casa.style.setProperty("background", fig);
-    if(vez == 1) {
+    if (vez == 1) {
       vez = 2;
     } else {
       vez = 1;
@@ -34,16 +71,16 @@ function jogar(tituloCasa) {
 }
 
 function verificarFimDeJogo() {
-  if (casasIguais(1, 2, 3) || 
-    casasIguais(4, 5, 6) || 
+  if (casasIguais(1, 2, 3) ||
+    casasIguais(4, 5, 6) ||
     casasIguais(7, 8, 9) ||
-    casasIguais(1, 4, 7) || 
-    casasIguais(2, 5, 8) || 
+    casasIguais(1, 4, 7) ||
+    casasIguais(2, 5, 8) ||
     casasIguais(3, 6, 9) ||
-    casasIguais(1, 5, 9) || 
+    casasIguais(1, 5, 9) ||
     casasIguais(3, 5, 7)) {
 
-    document.getElementById("resultado").innerHTML = 
+    document.getElementById("resultado").innerHTML =
       `<h3>O jogador ${vencedor} venceu</h3>`;
     reiniciar();
   }
@@ -81,4 +118,4 @@ function reiniciar() {
   document.getElementById("casa9").style.setProperty("background", "none");
   vez = 1;
   vencedor = "";
-}
+}*/
